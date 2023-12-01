@@ -33,14 +33,15 @@ HEADER image: https://upload.wikimedia.org/wikipedia/commons/5/5d/Eug%C3%A8ne_De
 
 body {
     background-image:url(./IMAGES/Eugène_Delacroix_-_Le_28_Juillet._La_Liberté_guidant_le_peuple.jpg);
-    padding:60px;
+    padding:0px;
     background-size: cover;
    /* box-shadow: 100px 100px;*/
 }
 
 h1 { 
-  padding:140px;
-    display:flex;
+  margin-top:170px;
+  padding:10px;
+    display: flex;
     justify-content: center;
     font-family: 'Anton', sans-serif;
     color:rgb(104, 11, 11);
@@ -48,8 +49,23 @@ h1 {
     font-size: 90px;
 }
 
-.titre_header:hover {
-opacity:0.1;  
+/*animation titre*/
+@keyframes glow {
+  from{text-shadow: 0 0 10px #8a4848, 0 0 20px #874f4f, 0 0 30px #6b3550, 
+    0 0 40px #412734, 0 0 50px #38202c, 0 0 60px #280a19, 0 0 70px #070004;
+
+  }
+
+  to{text-shadow: 0 0 20px #321717, 0 0 30px #5f4e56, 0 0 40px #6c3232, 
+    0 0 50px #4c303e, 0 0 60px #602744, 0 0 70px #680a39, 0 0 80px #56032d;
+  }
+}
+
+
+header h1:hover {
+text-shadow: 5px 5px rgb(188, 8, 8);
+color:rgb(13, 19, 69); 
+animation: glow 1.2s ease-in-out infinite alternate;
 }
 
 /*animation apres header*/
@@ -62,6 +78,7 @@ https://newcitygas.com*/
   .wrapper {
     max-width: 100%;
   overflow: hidden;
+  padding:60px;
   }
 
   .banner {
@@ -74,7 +91,7 @@ https://newcitygas.com*/
     display: inline-block;
     background-color:rgb(104, 11, 11);
     background-size: cover;
-    animation: turningBanner 30s linear infinite;
+    animation: turningBanner 40s linear infinite;
     animation-direction:normal;
     animation-delay: 1s;
   }
