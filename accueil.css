@@ -38,7 +38,7 @@ body {
    /* box-shadow: 100px 100px;*/
 }
 
-.accueil {
+h1 { 
   padding:140px;
     display:flex;
     justify-content: center;
@@ -46,6 +46,10 @@ body {
     color:rgb(104, 11, 11);
     text-shadow: 5px 5px 0 #000;
     font-size: 90px;
+}
+
+.titre_header:hover {
+opacity:0.1;  
 }
 
 /*animation apres header*/
