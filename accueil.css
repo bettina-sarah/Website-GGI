@@ -76,24 +76,26 @@ aussi le site que je me suis inspiré de la fonctionnalité:
 https://newcitygas.com*/
 
   .wrapper {
-    max-width: 100%;
+    width: 200%;
+    display: flex;
   overflow: hidden;
-  padding:60px;
   }
 
   .banner {
     font-family: 'Pacifico', cursive;
     font-size:40px;
-    width: 10000px;
+    width: 50%;
     height: 80px;
     white-space: nowrap;
     overflow:hidden;
     display: inline-block;
     background-color:rgb(104, 11, 11);
     background-size: cover;
-    animation: turningBanner 40s linear infinite;
-    animation-direction:normal;
-    animation-delay: 1s;
+    animation: turningBanner 8s linear infinite;
+  }
+
+  .banner.two {
+    animation: turningBanner 8s linear infinite;
   }
 
   .banner div {
@@ -102,23 +104,41 @@ https://newcitygas.com*/
   
   @keyframes turningBanner {
     0% {
-        transform: translate3d(0, 0, 0);
-        background-color: rgb(104, 11, 11, 0.7);
-      }
-      50% {
-        transform: translate3d(-30%, 0, 0);
-        background-color: rgba(36, 29, 80, 0.85);
-        color:rgb(201, 141, 141);
+        transform: translateX(0);
       }
       100% {
-        transform: translate3d(-50%, 0, 0);
-        background-color: rgb(104, 11, 11, 0.7);
+        transform: translateX(-100%);
       }
   }
 
+  @keyframes turningBannerTwo {
+    0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(0%);
+      }
+  }
+
+  /* previous sibling */
+  /* https://developer.mozilla.org/en-US/docs/Web/CSS/:has#examples */
+  .banner:has(+.banner:hover) {
+    color:rgb(123, 255, 255);
+    background-color: rgb(123, 244, 244);
+    animation-play-state: paused;
+  }
+
+  /* current */
   .banner:hover{
     color:rgb(255, 255, 255);
     background-color: rgb(249, 244, 244);
+    animation-play-state: paused;
+  }
+
+  /* next sibling */
+  .banner:hover+.banner {
+    color:rgb(123, 255, 255);
+    background-color: rgb(123, 244, 244);
     animation-play-state: paused;
   }
 /* 
@@ -162,3 +182,4 @@ section#banner {
       background-color: #FF4136;
     }
 }*/
+
