@@ -78,7 +78,7 @@ https://newcitygas.com*/
   .wrapper {
     width: 200%;
     display: flex;
-  overflow: hidden;
+    overflow: hidden;
   }
 
   .banner {
